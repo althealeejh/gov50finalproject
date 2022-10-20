@@ -1,6 +1,6 @@
 ---
 title: "Gov 50 Final Project"
-author: "Your Name Here"
+author: Althea Lee
 description: "My final project"
 output:
   distill::distill_article:
@@ -11,4 +11,8 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to...
+I am interested in exploring data related to Singapore's academic freedom and how it relates to the degree of political participation in the country. 
+
+Singapore challenges the theory that a robust education system equates a democratic state. Even with a high literacy rate and high percentage of citizens with tertiary education attainment, the country still scores low on the freedom house world rankings. I suspect that this is because of the largely politicized education system that stems even from the kindergarten and primary school level. Citizens are entrenched to government schemes and scholarships that limit political participation and free thinking - rather atypical to a developed country. 
+
+There are currently no quantifiable variables that study intricate and diverse citizen opinions towards the Singaporean education system. I believe that more data analysis (beyond simply literacy rates, mean years of schooling, and government expenditure) should exist in order to evaluate how much of the Singaporean education system is aligned with the country's "democratic" principles. 
