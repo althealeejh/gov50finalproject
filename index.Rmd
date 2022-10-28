@@ -43,6 +43,3 @@ The databases that will be used for this project include:
 - https://tablebuilder.singstat.gov.sg/table/CT/17571 
 - https://data.gov.sg/dataset/parliamentary-general-election-results
 - https://data.gov.sg/dataset/parliamentary-general-election-results?resource_id=f33c3652-ec6a-46e6-9c04-4f5c869d99b2
-
-
-fsdakjfdhaskjdf
