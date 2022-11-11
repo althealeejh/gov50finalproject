@@ -99,18 +99,17 @@ ggplot(papwin, aes(x = constituency, y = vote_percentage)) +
   geom_col(stat = "identity") + 
   theme(axis.text.x = element_text(angle =90, vjust =0.5, hjust =1)) +
   geom_hline(yintercept = 0.5, color = "cornflowerblue") + 
-  labs(x ="Constituency", y = "Vote Percentage") + 
+  labs(x ="Constituency", y = "Vote Percentage") 
 
 ```
 ```{r}
-library(sf)
-singapore <- st_read("MP14_PLNG_AREA_WEB_PL.shp")
+##library(sf)
+##singapore <- st_read("MP14_PLNG_AREA_WEB_PL.shp")
 
-ggplot(singapore) +
-  geom_sf(aes(fill = vote_percentage))
+##ggplot(singapore) +
+ ## geom_sf(aes(fill = vote_percentage))
 
 ```
-
 
 facetwrap 
 

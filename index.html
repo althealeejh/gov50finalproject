@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","MP14_PLNG_AREA_WEB_PL.dbf","MP14_PLNG_AREA_WEB_PL.prj","MP14_PLNG_AREA_WEB_PL.sbn","MP14_PLNG_AREA_WEB_PL.sbx","MP14_PLNG_AREA_WEB_PL.shp","MP14_PLNG_AREA_WEB_PL.shp.xml","MP14_PLNG_AREA_WEB_PL.shx"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1534,10 +1534,107 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>If I observe a greater number of opposition votes in “lower-class” constituencies, then this would support my hypothesis. However, if I observe a greater number of ruling party votes in “lower-class” constituencies, then this would provide evidence to reject my hypothesis.</p>
 <p>When I run my regression of the count of opposition party votes on the lower-class constituency variable, a positive, significant coefficient would support my hypothesis.</p>
 <p>The databases that will be used for this project include:
-- <a href="https://tablebuilder.singstat.gov.sg/table/CT/17571" class="uri">https://tablebuilder.singstat.gov.sg/table/CT/17571</a>
-- <a href="https://data.gov.sg/dataset/parliamentary-general-election-results" class="uri">https://data.gov.sg/dataset/parliamentary-general-election-results</a>
-- <a href="https://data.gov.sg/dataset/parliamentary-general-election-results?resource_id=f33c3652-ec6a-46e6-9c04-4f5c869d99b2" class="uri">https://data.gov.sg/dataset/parliamentary-general-election-results?resource_id=f33c3652-ec6a-46e6-9c04-4f5c869d99b2</a></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+- <a href="https://tablebuilder.singstat.gov.sg/table/CT/17571" class="uri">https://tablebuilder.singstat.gov.sg/table/CT/17571</a> (Gross Monthly Income from Work per PAR in 2020)
+- <a href="https://data.gov.sg/dataset/parliamentary-general-election-results" class="uri">https://data.gov.sg/dataset/parliamentary-general-election-results</a> (2020 General Election Results)</p>
+<h2 id="milestone-3-data-visualization">Milestone 3: Data visualization</h2>
+<h2 id="loading-the-general-elections-results-dataset">Loading the general elections results dataset</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readxl.tidyverse.org'>readxl</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>genel</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"~/Desktop/general elections dataset all years.xls"</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<h2 id="loading-the-socioeconomic-class-dataset">Loading the socioeconomic class dataset</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readxl.tidyverse.org'>readxl</a></span><span class='op'>)</span></span>
+<span><span class='va'>socioec</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"~/Downloads/17571.xlsx"</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>In this dataset,Singapore’s geographical regions are categorized by “Planning Area of Residence” (PAR). There are 55 PARs in Singapore. Each PAR is assigned to a constituency during the general elections.</p>
+<p>However, these electoral boundaries have been gerrymandered over Singapore’s history by redrawing and dissolving. An example is the 1997 General Election where the PAP won by a close margin of 53,553 votes (54.8%) to the opposition with 44,132 votes (45.2%). After the elections, Cheng San GRC was dissolved in time for the next General Election in 2001. This is worth noting as this project investigates the 2020 elections which had a redrawing between Ang Mo Kio and Sengkang constituencies, where residents in two PARs (Fernvale and Jalan Kayu) were moved from Ang Mo Kio to Sengkang in 2010 and then back to Ang Mo Kio from the previous election in 2020.</p>
+<p>Therefore, the electoral boundaries may shift in the next General Election in 2025. Analyzing the socioeconomic groups that make up each constituency may also give insight into how the Singaporean government chooses to dissolve or redraw certain electoral boundaries due to changing value judgments or living standards in various socioeconomic groups.</p>
+<p>There are two types of constituencies: Group Representation Constituencies (GRCs) and Single-Member Constituencies (SMCs). An SMC is an electoral division with a single Member of Parliament (MP) running for office and representing residents of the entire constituency. Ergo, voters living in an SMC will vote for a single individual on the ballot. A GRC is an electoral division of larger geographical size and housing population. Multiple MPs represent residents in the constituency, and they must be of the same party. Voters residing in a GRC will vote for a group of individuals to be their MPs.</p>
+<p>There are 31 constituencies in Singapore: 14 Single-Member Constituencies and 17 group representation constituencies.For instance, the voting constituency named “Aljunied” comprises of 5 PARS: Bedok Reservoir–Punggol, Eunos, Kaki Bukit, Paya Lebar, Serangoon.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>genel2020</span> <span class='op'>&lt;-</span> <span class='va'>genel</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>year</span> <span class='op'>==</span> <span class='fl'>2020</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>constituency</span>, <span class='va'>constituency_type</span>, <span class='va'>party</span>, <span class='va'>vote_percentage</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>ge2020win</span> <span class='op'>&lt;-</span> <span class='va'>genel2020</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>vote_percentage <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='va'>vote_percentage</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>Win <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>vote_percentage</span> <span class='op'>&gt;=</span> <span class='fl'>0.5</span>, <span class='st'>"Yes"</span>, <span class='st'>"No"</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>ge2020win</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>constituency</span>, <span class='va'>party</span>, <span class='va'>vote_percentage</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code># A tibble: 64 × 3
+   constituency     party vote_percentage
+   &lt;chr&gt;            &lt;chr&gt;           &lt;dbl&gt;
+ 1 Aljunied         PAP             0.400
+ 2 Aljunied         WP              0.600
+ 3 Ang Mo Kio       PAP             0.719
+ 4 Ang Mo Kio       RP              0.281
+ 5 Bishan-Toa Payoh PAP             0.672
+ 6 Bishan-Toa Payoh SPP             0.328
+ 7 Bukit Batok      SDP             0.452
+ 8 Bukit Batok      PAP             0.548
+ 9 Bukit Panjang    PAP             0.537
+10 Bukit Panjang    SDP             0.463
+# … with 54 more rows</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>bracket1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Ang Mo Kio"</span>, <span class='st'>"Bukit Batok"</span>, <span class='st'>"Bukit Merah"</span>, <span class='st'>"Geylang"</span>, <span class='st'>"Jurong East"</span>, <span class='st'>"Jurong West"</span>, <span class='st'>"Outram"</span>, <span class='st'>"Woodlands"</span>, <span class='st'>"Yishun"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>papwin</span> <span class='op'>&lt;-</span> <span class='va'>ge2020win</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>party</span> <span class='op'>==</span> <span class='st'>"PAP"</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='st'>"No"</span> <span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>constituency</span><span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span><span class='va'>bracket1</span>, <span class='st'>"A"</span>, <span class='va'>income_bracket</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>papwin</span></span></code></pre>
+</div>
+<pre><code># A tibble: 31 × 6
+   constituency        constituency_type party vote_pe…¹ Win   incom…²
+   &lt;chr&gt;               &lt;chr&gt;             &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  
+ 1 Aljunied            GRC               PAP       0.400 No    No     
+ 2 Ang Mo Kio          GRC               PAP       0.719 Yes   A      
+ 3 Bishan-Toa Payoh    GRC               PAP       0.672 Yes   No     
+ 4 Bukit Batok         SMC               PAP       0.548 Yes   A      
+ 5 Bukit Panjang       SMC               PAP       0.537 Yes   No     
+ 6 Chua Chu Kang       SMC               PAP       0.586 Yes   No     
+ 7 East Coast          GRC               PAP       0.534 Yes   No     
+ 8 Holland-Bukit Timah GRC               PAP       0.664 Yes   No     
+ 9 Hong Kah North      SMC               PAP       0.610 Yes   No     
+10 Hougang             SMC               PAP       0.388 No    No     
+# … with 21 more rows, and abbreviated variable names
+#   ¹​vote_percentage, ²​income_bracket</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>papwin</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>constituency</span>, y <span class='op'>=</span> <span class='va'>vote_percentage</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"identity"</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>axis.text.x <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>angle <span class='op'>=</span><span class='fl'>90</span>, vjust <span class='op'>=</span><span class='fl'>0.5</span>, hjust <span class='op'>=</span><span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_abline.html'>geom_hline</a></span><span class='op'>(</span>yintercept <span class='op'>=</span> <span class='fl'>0.5</span>, color <span class='op'>=</span> <span class='st'>"cornflowerblue"</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span><span class='st'>"Constituency"</span>, y <span class='op'>=</span> <span class='st'>"Vote Percentage"</span><span class='op'>)</span> </span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>##library(sf)</span></span>
+<span><span class='co'>##singapore &lt;- st_read("MP14_PLNG_AREA_WEB_PL.shp")</span></span>
+<span></span>
+<span><span class='co'>##ggplot(singapore) +</span></span>
+<span> <span class='co'>## geom_sf(aes(fill = vote_percentage))</span></span></code></pre>
+</div>
+</div>
+<p>facetwrap</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
