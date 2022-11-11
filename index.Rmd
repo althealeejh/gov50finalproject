@@ -44,7 +44,7 @@ The databases that will be used for this project include:
 - https://data.gov.sg/dataset/parliamentary-general-election-results (2020 General Election Results)
 
 
-## Data visualization 
+## Milestone 3: Data visualization 
 
 ## Loading the general elections results dataset
 ```{r}
@@ -70,8 +70,6 @@ There are two types of constituencies: Group Representation Constituencies (GRCs
 
 There are 31 constituencies in Singapore: 14 Single-Member Constituencies and 17 group representation constituencies.For instance, the voting constituency named "Aljunied" comprises of 5 PARS: Bedok Reservoir–Punggol, Eunos, Kaki Bukit, Paya Lebar, Serangoon. 
 
-The first part of this project is to tidy up the "genel" dataset to give values from the 2020 election only. Since we are not interested in the candidates running but rather the party, the "candidates" column should be removed. 
-
 ```{r}
 genel2020 <- genel |> 
   filter(year == 2020) |> 
@@ -96,7 +94,6 @@ papwin <- ge2020win |>
 papwin
 ```
 
-
 ```{r}
 ggplot(papwin, aes(x = constituency, y = vote_percentage)) + 
   geom_col(stat = "identity") + 
@@ -111,15 +108,9 @@ singapore <- st_read("MP14_PLNG_AREA_WEB_PL.shp")
 
 ggplot(singapore) +
   geom_sf(aes(fill = vote_percentage))
+
 ```
 
 
 facetwrap 
-
-
-## Socioec dataset cleaning up 
-
-```{r}
-
-```
 
