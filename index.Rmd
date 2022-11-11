@@ -40,6 +40,86 @@ If I observe a greater number of opposition votes in “lower-class” constitue
 When I run my regression of the count of opposition party votes on the lower-class constituency variable, a positive, significant coefficient would support my hypothesis. 
 
 The databases that will be used for this project include: 
-- https://tablebuilder.singstat.gov.sg/table/CT/17571 
-- https://data.gov.sg/dataset/parliamentary-general-election-results
-- https://data.gov.sg/dataset/parliamentary-general-election-results?resource_id=f33c3652-ec6a-46e6-9c04-4f5c869d99b2
+- https://tablebuilder.singstat.gov.sg/table/CT/17571 (Gross Monthly Income from Work per PAR in 2020)
+- https://data.gov.sg/dataset/parliamentary-general-election-results (2020 General Election Results)
+
+
+## Data visualization 
+
+## Loading the general elections results dataset
+```{r}
+library(tidyverse)
+library(readxl)
+
+genel <- read_excel("~/Desktop/general elections dataset all years.xls")
+```
+
+## Loading the socioeconomic class dataset
+```{r}
+library(readxl)
+socioec <- read_excel("~/Downloads/17571.xlsx")
+```
+
+In this dataset,Singapore's geographical regions are categorized by "Planning Area of Residence" (PAR). There are 55 PARs in Singapore. Each PAR is assigned to a constituency during the general elections. 
+
+However, these electoral boundaries have been gerrymandered over Singapore's history by redrawing and dissolving. An example is the 1997 General Election where the PAP won by a close margin of 53,553 votes (54.8%) to the opposition with 44,132 votes (45.2%). After the elections, Cheng San GRC was dissolved in time for the next General Election in 2001. This is worth noting as this project investigates the 2020 elections which had a redrawing between Ang Mo Kio and Sengkang constituencies, where residents in two PARs (Fernvale and Jalan Kayu) were moved from Ang Mo Kio to Sengkang in 2010 and then back to Ang Mo Kio from the previous election in 2020. 
+
+Therefore, the electoral boundaries may shift in the next General Election in 2025. Analyzing the socioeconomic groups that make up each constituency may also give insight into how the Singaporean government chooses to dissolve or redraw certain electoral boundaries due to changing value judgments or living standards in various socioeconomic groups. 
+
+There are two types of constituencies: Group Representation Constituencies (GRCs) and Single-Member Constituencies (SMCs). An SMC is an electoral division with a single Member of Parliament (MP) running for office and representing residents of the entire constituency. Ergo, voters living in an SMC will vote for a single individual on the ballot. A GRC is an electoral division of larger geographical size and housing population. Multiple MPs represent residents in the constituency, and they must be of the same party. Voters residing in a GRC will vote for a group of individuals to be their MPs.
+
+There are 31 constituencies in Singapore: 14 Single-Member Constituencies and 17 group representation constituencies.For instance, the voting constituency named "Aljunied" comprises of 5 PARS: Bedok Reservoir–Punggol, Eunos, Kaki Bukit, Paya Lebar, Serangoon. 
+
+The first part of this project is to tidy up the "genel" dataset to give values from the 2020 election only. Since we are not interested in the candidates running but rather the party, the "candidates" column should be removed. 
+
+```{r}
+genel2020 <- genel |> 
+  filter(year == 2020) |> 
+  select(constituency, constituency_type, party, vote_percentage)
+```
+
+```{r}
+ge2020win <- genel2020 |> 
+  mutate(vote_percentage = as.numeric(vote_percentage)) |> 
+  mutate(Win = if_else(vote_percentage >= 0.5, "Yes", "No"))
+
+ge2020win |> 
+  select(constituency, party, vote_percentage)
+
+bracket1 <- c("Ang Mo Kio", "Bukit Batok", "Bukit Merah", "Geylang", "Jurong East", "Jurong West", "Outram", "Woodlands", "Yishun")
+
+papwin <- ge2020win |> 
+  filter(party == "PAP") |> 
+  mutate(income_bracket = "No" ) |> 
+  mutate(income_bracket = if_else(constituency%in%bracket1, "A", income_bracket))
+
+papwin
+```
+
+
+```{r}
+ggplot(papwin, aes(x = constituency, y = vote_percentage)) + 
+  geom_col(stat = "identity") + 
+  theme(axis.text.x = element_text(angle =90, vjust =0.5, hjust =1)) +
+  geom_hline(yintercept = 0.5, color = "cornflowerblue") + 
+  labs(x ="Constituency", y = "Vote Percentage") + 
+
+```
+```{r}
+library(sf)
+singapore <- st_read("MP14_PLNG_AREA_WEB_PL.shp")
+
+ggplot(singapore) +
+  geom_sf(aes(fill = vote_percentage))
+```
+
+
+facetwrap 
+
+
+## Socioec dataset cleaning up 
+
+```{r}
+
+```
+
