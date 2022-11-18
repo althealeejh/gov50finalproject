@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","MP14_PLNG_AREA_WEB_PL.dbf","MP14_PLNG_AREA_WEB_PL.prj","MP14_PLNG_AREA_WEB_PL.sbn","MP14_PLNG_AREA_WEB_PL.sbx","MP14_PLNG_AREA_WEB_PL.shp","MP14_PLNG_AREA_WEB_PL.shp.xml","MP14_PLNG_AREA_WEB_PL.shx"]}
+  {"type":"character","attributes":{},"value":["index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-10-1.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-6-1.png","index_files/figure-html5/unnamed-chunk-6-2.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","MP14_PLNG_AREA_WEB_PL.dbf","MP14_PLNG_AREA_WEB_PL.prj","MP14_PLNG_AREA_WEB_PL.sbn","MP14_PLNG_AREA_WEB_PL.sbx","MP14_PLNG_AREA_WEB_PL.shp","MP14_PLNG_AREA_WEB_PL.shp.xml","MP14_PLNG_AREA_WEB_PL.shx"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1589,31 +1589,234 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 10 Bukit Panjang    SDP             0.463
 # … with 54 more rows</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>bracket1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Ang Mo Kio"</span>, <span class='st'>"Bukit Batok"</span>, <span class='st'>"Bukit Merah"</span>, <span class='st'>"Geylang"</span>, <span class='st'>"Jurong East"</span>, <span class='st'>"Jurong West"</span>, <span class='st'>"Outram"</span>, <span class='st'>"Woodlands"</span>, <span class='st'>"Yishun"</span><span class='op'>)</span></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>bracket1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Ang Mo Kio"</span>, <span class='st'>"Kebun Baru"</span>, <span class='st'>"Bukit Batok"</span>, <span class='st'>"Jurong"</span>, <span class='st'>"Hong Kah North"</span>, <span class='st'>"Bukit Merah"</span>, <span class='st'>"Geylang"</span>, <span class='st'>"MacPherson"</span>, <span class='st'>"Jurong East"</span>, <span class='st'>"Yuhua"</span>, <span class='st'>"Jurong West"</span>, <span class='st'>"Pioneer"</span>, <span class='st'>"Outram"</span>, <span class='st'>"Woodlands"</span>, <span class='st'>"Sembawang"</span>, <span class='st'>"Yishun"</span>, <span class='st'>"Mountbatten"</span>, <span class='st'>"Radin Mas"</span>, <span class='st'>"Jalan Besar"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>bracket2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Aljunied"</span>, <span class='st'>"East Coast"</span>, <span class='st'>"Bukit Panjang"</span>, <span class='st'>"Chua Chu Kang"</span>, <span class='st'>"Hougang"</span>, <span class='st'>"Kallang"</span>, <span class='st'>"Sembawang"</span>, <span class='st'>"Sengkang"</span>, <span class='st'>"Tampines"</span>, <span class='st'>"Yio Chu Kang"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>bracket3</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Bishan-Toa Payoh"</span>,<span class='st'>"Potong Pasir"</span>, <span class='st'>"Clementi"</span>, <span class='st'>"Pasir Ris-Punggol"</span>, <span class='st'>"Punggol West"</span>, <span class='st'>"Queenstown"</span>, <span class='st'>"Serangoon"</span>, <span class='st'>"Marymount"</span>, <span class='st'>"West Coast"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>bracket4</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Marine Parade"</span>, <span class='st'>"Novena"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>bracket5</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Holland-Bukit Timah"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>bracket6</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Tanjong Pagar"</span><span class='op'>)</span></span>
+<span>  </span>
 <span></span>
 <span><span class='va'>papwin</span> <span class='op'>&lt;-</span> <span class='va'>ge2020win</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>party</span> <span class='op'>==</span> <span class='st'>"PAP"</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='st'>"No"</span> <span class='op'>)</span> <span class='op'>|&gt;</span> </span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>constituency</span><span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span><span class='va'>bracket1</span>, <span class='st'>"A"</span>, <span class='va'>income_bracket</span><span class='op'>)</span><span class='op'>)</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='fl'>0</span> <span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>constituency</span><span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span><span class='va'>bracket1</span>, <span class='fl'>1</span>, <span class='va'>income_bracket</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>constituency</span><span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span><span class='va'>bracket2</span>, <span class='fl'>2</span>, <span class='va'>income_bracket</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>constituency</span><span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span><span class='va'>bracket3</span>, <span class='fl'>3</span>, <span class='va'>income_bracket</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>constituency</span><span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span><span class='va'>bracket4</span>, <span class='fl'>4</span>, <span class='va'>income_bracket</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>constituency</span><span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span><span class='va'>bracket5</span>, <span class='fl'>5</span>, <span class='va'>income_bracket</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>constituency</span><span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span><span class='va'>bracket6</span>, <span class='fl'>6</span>, <span class='va'>income_bracket</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>income_bracket <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/na_if.html'>na_if</a></span><span class='op'>(</span><span class='va'>income_bracket</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>constituency</span>, <span class='va'>vote_percentage</span>, <span class='va'>Win</span>, <span class='va'>income_bracket</span><span class='op'>)</span></span>
+<span>  </span>
 <span></span>
-<span><span class='va'>papwin</span></span></code></pre>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>papwin</span><span class='op'>)</span></span></code></pre>
 </div>
-<pre><code># A tibble: 31 × 6
-   constituency        constituency_type party vote_pe…¹ Win   incom…²
-   &lt;chr&gt;               &lt;chr&gt;             &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  
- 1 Aljunied            GRC               PAP       0.400 No    No     
- 2 Ang Mo Kio          GRC               PAP       0.719 Yes   A      
- 3 Bishan-Toa Payoh    GRC               PAP       0.672 Yes   No     
- 4 Bukit Batok         SMC               PAP       0.548 Yes   A      
- 5 Bukit Panjang       SMC               PAP       0.537 Yes   No     
- 6 Chua Chu Kang       SMC               PAP       0.586 Yes   No     
- 7 East Coast          GRC               PAP       0.534 Yes   No     
- 8 Holland-Bukit Timah GRC               PAP       0.664 Yes   No     
- 9 Hong Kah North      SMC               PAP       0.610 Yes   No     
-10 Hougang             SMC               PAP       0.388 No    No     
-# … with 21 more rows, and abbreviated variable names
-#   ¹​vote_percentage, ²​income_bracket</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">constituency</th>
+<th style="text-align: right;">vote_percentage</th>
+<th style="text-align: left;">Win</th>
+<th style="text-align: right;">income_bracket</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Aljunied</td>
+<td style="text-align: right;">0.4005</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ang Mo Kio</td>
+<td style="text-align: right;">0.7191</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bishan-Toa Payoh</td>
+<td style="text-align: right;">0.6723</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Bukit Batok</td>
+<td style="text-align: right;">0.5480</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bukit Panjang</td>
+<td style="text-align: right;">0.5373</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chua Chu Kang</td>
+<td style="text-align: right;">0.5864</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">East Coast</td>
+<td style="text-align: right;">0.5339</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Holland-Bukit Timah</td>
+<td style="text-align: right;">0.6636</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hong Kah North</td>
+<td style="text-align: right;">0.6099</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hougang</td>
+<td style="text-align: right;">0.3879</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jalan Besar</td>
+<td style="text-align: right;">0.6536</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jurong</td>
+<td style="text-align: right;">0.7461</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kebun Baru</td>
+<td style="text-align: right;">0.6292</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">MacPherson</td>
+<td style="text-align: right;">0.7174</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Marine Parade</td>
+<td style="text-align: right;">0.5774</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Marsiling-Yew Tee</td>
+<td style="text-align: right;">0.6318</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Marymount</td>
+<td style="text-align: right;">0.5504</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mountbatten</td>
+<td style="text-align: right;">0.7382</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Nee Soon</td>
+<td style="text-align: right;">0.6190</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pasir Ris-Punggol</td>
+<td style="text-align: right;">0.6416</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pioneer</td>
+<td style="text-align: right;">0.6200</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Potong Pasir</td>
+<td style="text-align: right;">0.6067</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Punggol West</td>
+<td style="text-align: right;">0.6098</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Radin Mas</td>
+<td style="text-align: right;">0.7401</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sembawang</td>
+<td style="text-align: right;">0.6729</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sengkang</td>
+<td style="text-align: right;">0.4788</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tampines</td>
+<td style="text-align: right;">0.6641</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tanjong Pagar</td>
+<td style="text-align: right;">0.6310</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">West Coast</td>
+<td style="text-align: right;">0.5168</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Yio Chu Kang</td>
+<td style="text-align: right;">0.6082</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Yuhua</td>
+<td style="text-align: right;">0.7054</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
 </div>
+<h2 id="visualization-1">Visualization 1</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>papwin</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>constituency</span>, y <span class='op'>=</span> <span class='va'>vote_percentage</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
@@ -1624,17 +1827,110 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
+<h2 id="visualization-2">Visualization 2</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>##library(sf)</span></span>
-<span><span class='co'>##singapore &lt;- st_read("MP14_PLNG_AREA_WEB_PL.shp")</span></span>
-<span></span>
-<span><span class='co'>##ggplot(singapore) +</span></span>
-<span> <span class='co'>## geom_sf(aes(fill = vote_percentage))</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>papwin</span><span class='op'>$</span><span class='va'>income_bracket</span>, <span class='va'>papwin</span><span class='op'>$</span><span class='va'>vote_percentage</span><span class='op'>)</span></span></code></pre>
 </div>
+<img src="index_files/figure-html5/unnamed-chunk-6-1.png" width="624" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>papwin</span>,<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>income_bracket</span>, y <span class='op'>=</span> <span class='va'>vote_percentage</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-6-2.png" width="624" /></p>
+</div>
+<h2 id="analysis-of-visualizations">Analysis of visualizations</h2>
+<p>Based on figure 1, there are 3 constituencies that fall under the 0.5 vote percentage cutoff, indicating that the PAP lost in 3 out of 31 constituencies.</p>
+<p>Looking to figure 2, we can observe that there is an inverted bell curve relationship between income bracket and vote percentage. The upper interval of the second income bracket is below the lower interval of the first income bracket, thus proving that the difference is statistically significant because it is outside of the interval. However, the confidence intervals of brackets 3, 4, 5, and 6 are overlapping, indicating that this difference is not statistically significant.</p>
+<h2 id="analysis-of-income-bracket-and-vote-percentage">Analysis of income bracket and vote percentage</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>l.lm</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>vote_percentage</span> <span class='op'>~</span> <span class='va'>income_bracket</span>, data <span class='op'>=</span> <span class='va'>papwin</span><span class='op'>)</span> </span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>l.lm</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = vote_percentage ~ income_bracket, data = papwin)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.226594 -0.050664  0.005636  0.071236  0.118176 
+
+Coefficients:
+               Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)     0.64135    0.03412  18.799   &lt;2e-16 ***
+income_bracket -0.01343    0.01377  -0.975    0.338    
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.09284 on 27 degrees of freedom
+  (2 observations deleted due to missingness)
+Multiple R-squared:  0.03403,   Adjusted R-squared:  -0.001748 
+F-statistic: 0.9511 on 1 and 27 DF,  p-value: 0.3381</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>curve.lm</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>vote_percentage</span> <span class='op'>~</span> <span class='va'>income_bracket</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/r/base/AsIs.html'>I</a></span><span class='op'>(</span><span class='va'>income_bracket</span><span class='op'>^</span><span class='fl'>2</span><span class='op'>)</span>, data <span class='op'>=</span> <span class='va'>papwin</span><span class='op'>)</span> </span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>curve.lm</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>
+Call:
+lm(formula = vote_percentage ~ income_bracket + I(income_bracket^2), 
+    data = papwin)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.20185 -0.04817  0.01183  0.06103  0.11338 
+
+Coefficients:
+                     Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)          0.763862   0.058194  13.126  5.6e-13 ***
+income_bracket      -0.124535   0.046284  -2.691   0.0123 *  
+I(income_bracket^2)  0.018740   0.007512   2.495   0.0193 *  
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.08498 on 26 degrees of freedom
+  (2 observations deleted due to missingness)
+Multiple R-squared:  0.2206,    Adjusted R-squared:  0.1607 
+F-statistic:  3.68 on 2 and 26 DF,  p-value: 0.03916</code></pre>
+</div>
+<p>The second test of curve.lm shows that there is a statistically significant effect between income bracket and vote percentage as seen with the p value less than 0.05. Furthermore, the adjusted R^2 value is approximately 17%, indicating that there is a positive correlation that is albeit weak. This may suggest that the middle-income brackets break the direct relationship and instead have the lowest turnout, rather than the low-income brackets.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://r-spatial.github.io/sf/'>sf</a></span><span class='op'>)</span></span>
+<span><span class='va'>singapore</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://r-spatial.github.io/sf/reference/st_read.html'>st_read</a></span><span class='op'>(</span><span class='st'>"MP14_PLNG_AREA_WEB_PL.shp"</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>Reading layer `MP14_PLNG_AREA_WEB_PL&#39; from data source 
+  `/Users/althealeejh/Desktop/GOV 50/gov50finalproject/MP14_PLNG_AREA_WEB_PL.shp&#39; 
+  using driver `ESRI Shapefile&#39;
+Simple feature collection with 55 features and 12 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 2667.538 ymin: 15748.72 xmax: 56396.44 ymax: 50256.33
+Projected CRS: SVY21</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>singapore</span> <span class='op'>&lt;-</span> <span class='va'>singapore</span> <span class='op'>|&gt;</span> </span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>conwin2 <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/chartr.html'>tolower</a></span><span class='op'>(</span><span class='va'>PLN_AREA_N</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>papwin</span><span class='op'>$</span><span class='va'>conwin2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/chartr.html'>tolower</a></span><span class='op'>(</span><span class='va'>papwin</span><span class='op'>$</span><span class='va'>constituency</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<h2 id="mapping-visualization">Mapping Visualization</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>newdata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/merge.html'>merge</a></span><span class='op'>(</span><span class='va'>singapore</span>, <span class='va'>papwin</span>, by.x <span class='op'>=</span> <span class='st'>"conwin2"</span>, by.y <span class='op'>=</span> <span class='st'>"conwin2"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>newdata</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggsf.html'>geom_sf</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>newdata</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='va'>vote_percentage</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_viridis.html'>scale_fill_viridis_c</a></span><span class='op'>(</span>option <span class='op'>=</span> <span class='st'>"H"</span><span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-10-1.png" width="624" /></p>
 </div>
 <p>facetwrap</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

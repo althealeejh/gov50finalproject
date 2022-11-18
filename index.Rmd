@@ -84,32 +84,93 @@ ge2020win <- genel2020 |>
 ge2020win |> 
   select(constituency, party, vote_percentage)
 
-bracket1 <- c("Ang Mo Kio", "Bukit Batok", "Bukit Merah", "Geylang", "Jurong East", "Jurong West", "Outram", "Woodlands", "Yishun")
+bracket1 <- c("Ang Mo Kio", "Kebun Baru", "Bukit Batok", "Jurong", "Hong Kah North", "Bukit Merah", "Geylang", "MacPherson", "Jurong East", "Yuhua", "Jurong West", "Pioneer", "Outram", "Woodlands", "Sembawang", "Yishun", "Mountbatten", "Radin Mas", "Jalan Besar")
+
+bracket2 <- c("Aljunied", "East Coast", "Bukit Panjang", "Chua Chu Kang", "Hougang", "Kallang", "Sembawang", "Sengkang", "Tampines", "Yio Chu Kang")
+
+bracket3 <- c("Bishan-Toa Payoh","Potong Pasir", "Clementi", "Pasir Ris-Punggol", "Punggol West", "Queenstown", "Serangoon", "Marymount", "West Coast")
+
+bracket4 <- c("Marine Parade", "Novena")
+
+bracket5 <- c("Holland-Bukit Timah")
+
+bracket6 <- c("Tanjong Pagar")
+  
 
 papwin <- ge2020win |> 
   filter(party == "PAP") |> 
-  mutate(income_bracket = "No" ) |> 
-  mutate(income_bracket = if_else(constituency%in%bracket1, "A", income_bracket))
+  mutate(income_bracket = 0 ) |> 
+  mutate(income_bracket = if_else(constituency%in%bracket1, 1, income_bracket)) |> 
+  mutate(income_bracket = if_else(constituency%in%bracket2, 2, income_bracket)) |> 
+  mutate(income_bracket = if_else(constituency%in%bracket3, 3, income_bracket)) |> 
+  mutate(income_bracket = if_else(constituency%in%bracket4, 4, income_bracket)) |> 
+  mutate(income_bracket = if_else(constituency%in%bracket5, 5, income_bracket)) |> 
+  mutate(income_bracket = if_else(constituency%in%bracket6, 6, income_bracket)) |>
+  mutate(income_bracket = na_if(income_bracket, 0)) |>
+  select(constituency, vote_percentage, Win, income_bracket)
+  
 
-papwin
+knitr::kable(papwin)
+
+
+  
 ```
 
+## Visualization 1
 ```{r}
 ggplot(papwin, aes(x = constituency, y = vote_percentage)) + 
   geom_col(stat = "identity") + 
   theme(axis.text.x = element_text(angle =90, vjust =0.5, hjust =1)) +
   geom_hline(yintercept = 0.5, color = "cornflowerblue") + 
   labs(x ="Constituency", y = "Vote Percentage") 
-
 ```
+
+## Visualization 2
 ```{r}
-##library(sf)
-##singapore <- st_read("MP14_PLNG_AREA_WEB_PL.shp")
+plot(papwin$income_bracket, papwin$vote_percentage)
 
-##ggplot(singapore) +
- ## geom_sf(aes(fill = vote_percentage))
+ggplot(papwin,aes(x = income_bracket, y = vote_percentage)) + 
+  geom_point() + 
+  geom_smooth()
+```
+
+## Analysis of visualizations
+Based on figure 1, there are 3 constituencies that fall under the 0.5 vote percentage cutoff, indicating that the PAP lost in 3 out of 31 constituencies. 
+
+Looking to figure 2, we can observe that there is an inverted bell curve relationship between income bracket and vote percentage. The upper interval of the second income bracket is below the lower interval of the first income bracket, thus proving that the difference is statistically significant because it is outside of the interval. However, the confidence intervals of brackets 3, 4, 5, and 6 are overlapping, indicating that this difference is not statistically significant. 
+
+## Analysis of income bracket and vote percentage
+```{r}
+l.lm <- lm(vote_percentage ~ income_bracket, data = papwin) 
+summary(l.lm)
+
+curve.lm <- lm(vote_percentage ~ income_bracket + I(income_bracket^2), data = papwin) 
+summary(curve.lm)
 
 ```
+
+The second test of curve.lm shows that there is a statistically significant effect between income bracket and vote percentage as seen with the p value less than 0.05. Furthermore, the adjusted R^2 value is approximately 17%, indicating that there is a positive correlation that is albeit weak. This may suggest that the middle-income brackets break the direct relationship and instead have the lowest turnout, rather than the low-income brackets. 
+
+```{r}
+library(sf)
+singapore <- st_read("MP14_PLNG_AREA_WEB_PL.shp")
+singapore <- singapore |> 
+  mutate(conwin2 = tolower(PLN_AREA_N))
+```
+
+```{r}
+papwin$conwin2 <- tolower(papwin$constituency)
+```
+
+## Mapping Visualization
+```{r}
+newdata <- merge(singapore, papwin, by.x = "conwin2", by.y = "conwin2")
+
+ggplot(newdata) +
+ geom_sf(data = newdata, aes(fill = vote_percentage)) + 
+  scale_fill_viridis_c(option = "H")
+```
+
 
 facetwrap 
 
