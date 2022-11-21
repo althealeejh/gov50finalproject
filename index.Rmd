@@ -162,6 +162,19 @@ singapore <- singapore |>
 papwin$conwin2 <- tolower(papwin$constituency)
 ```
 
+```{r}
+library(sf)
+sgnew <- st_read("GRED_20190215_Singapore_2006.shp") 
+
+sgnew <- sgnew |>
+  mutate(cwin = tolower(cst_n))
+
+sgnew
+
+papwin$cwin <- tolower(papwin$constituency)
+```
+
+
 ## Mapping Visualization
 ```{r}
 newdata <- merge(singapore, papwin, by.x = "conwin2", by.y = "conwin2")
@@ -171,6 +184,13 @@ ggplot(newdata) +
   scale_fill_viridis_c(option = "H")
 ```
 
+```{r}
+newnewdata <- merge(sgnew, papwin, by.x = "cwin", by.y = "cwin")
 
-facetwrap 
+ggplot(newnewdata) +
+ geom_sf(data = newnewdata, aes(fill = vote_percentage)) + 
+  scale_fill_viridis_c(option = "H")
+```
+
+
 
