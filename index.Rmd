@@ -176,13 +176,6 @@ papwin$cwin <- tolower(papwin$constituency)
 
 
 ## Mapping Visualization
-```{r}
-newdata <- merge(singapore, papwin, by.x = "conwin2", by.y = "conwin2")
-
-ggplot(newdata) +
- geom_sf(data = newdata, aes(fill = vote_percentage)) + 
-  scale_fill_viridis_c(option = "H")
-```
 
 ```{r}
 newnewdata <- merge(sgnew, papwin, by.x = "cwin", by.y = "cwin")
