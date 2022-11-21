@@ -184,6 +184,6 @@ ggplot(newnewdata) +
  geom_sf(data = newnewdata, aes(fill = vote_percentage)) + 
   scale_fill_viridis_c(option = "H")
 ```
-
+new map
 
 
