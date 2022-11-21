@@ -153,17 +153,6 @@ The second test of curve.lm shows that there is a statistically significant effe
 
 ```{r}
 library(sf)
-singapore <- st_read("MP14_PLNG_AREA_WEB_PL.shp")
-singapore <- singapore |> 
-  mutate(conwin2 = tolower(PLN_AREA_N))
-```
-
-```{r}
-papwin$conwin2 <- tolower(papwin$constituency)
-```
-
-```{r}
-library(sf)
 sgnew <- st_read("GRED_20190215_Singapore_2006.shp") 
 
 sgnew <- sgnew |>
@@ -184,6 +173,23 @@ ggplot(newnewdata) +
  geom_sf(data = newnewdata, aes(fill = vote_percentage)) + 
   scale_fill_viridis_c(option = "H")
 ```
-new map
+
+## Analyzing the map 
+
+Overall, Central Singapore has a strong vote percentage as seen with its warmer tones. Holland-Bukit Timah, Bishan-Toa Payoh, and Tanjong Pagar constituencies. 
+The North-East and Eastern regions have the lowest vote percentage. This region consists of Hougang and Serangoon constituencies. The Eastern most region is represented by the East Coast constituency. 
+Western Singapore also has a relatively low vote percentage concentration for the ruling party. This region consists of the West Coast constituency entirely. 
+
+In general, the East and West Coast of Singapore has a lower vote percentage for the ruling party, whereas the central regions of Singapore have higher vote percentages. There are a few outliers such as the purple region (Aljunied). 
+
+## Observing the warmest and coldest regions in relation to income bracket
+
+The warmest regions on the map are Jurong and Ang Mo Kio  (the two red regions). This matches the data as Jurong and Ang Mo Kio have significantly high vote percentages of 0.7461 and 0.7191 respectively. In relation to income bracket, Jurong is in income bracket 1 and Ang Mo Kio is in income bracket 1 as well. 
+
+The coldest regions on the map are Hougang, Aljunied, the East Coast and West Coast. East Coast falls under income bracket 2 and West Coast falls under income bracket 3. Hougang and Aljunied are both in income bracket 2. We can infer that these regions are inhabited by middle-income voters. 
+
+On the other hand, turning to high-income voters, they reside in regions falling under income brackets 4, 5, and 6. These constituencies are Holland-Bukit Timah, Bishan-Toa Payoh, and Tanjong Pagar. Unsurprisingly, these regions are situated in Central Singapore - the most concentrated warm area on the map. 
+
+Here, we observe an inverse relationship with income bracket and vote percentage. Both low income households and high income households will vote for the ruling party. However, middle income households will either vote against (in the case of Hougang, Aljunied, and Sengkang) or vote less strongly for (in the case of East and West Coast) the PAP.
 
 
