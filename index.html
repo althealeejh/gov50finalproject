@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["GRED_20190215_Singapore/GRED_20190215_codebook.pdf","GRED_20190215_Singapore/readme_GRED_20190215.txt","GRED_20190215_Singapore_2006.dbf","GRED_20190215_Singapore_2006.prj","GRED_20190215_Singapore_2006.shp","GRED_20190215_Singapore_2006.shx","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-10-1.png","index_files/figure-html5/unnamed-chunk-11-1.png","index_files/figure-html5/unnamed-chunk-12-1.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-6-1.png","index_files/figure-html5/unnamed-chunk-6-2.png","index_files/figure-html5/unnamed-chunk-9-1.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","MP14_PLNG_AREA_WEB_PL.dbf","MP14_PLNG_AREA_WEB_PL.prj","MP14_PLNG_AREA_WEB_PL.sbn","MP14_PLNG_AREA_WEB_PL.sbx","MP14_PLNG_AREA_WEB_PL.shp","MP14_PLNG_AREA_WEB_PL.shp.xml","MP14_PLNG_AREA_WEB_PL.shx"]}
+  {"type":"character","attributes":{},"value":["GRED_20190215_Singapore/GRED_20190215_codebook.pdf","GRED_20190215_Singapore/readme_GRED_20190215.txt","GRED_20190215_Singapore_2006.dbf","GRED_20190215_Singapore_2006.prj","GRED_20190215_Singapore_2006.shp","GRED_20190215_Singapore_2006.shx","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-10-1.png","index_files/figure-html5/unnamed-chunk-11-1.png","index_files/figure-html5/unnamed-chunk-12-1.png","index_files/figure-html5/unnamed-chunk-5-1.png","index_files/figure-html5/unnamed-chunk-6-1.png","index_files/figure-html5/unnamed-chunk-6-2.png","index_files/figure-html5/unnamed-chunk-9-1.png","index_files/header-attrs-2.16/header-attrs.js","index_files/header-attrs-2.17/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/kePrint-0.0.1/kePrint.js","index_files/lightable-0.0.1/lightable.css","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","MP14_PLNG_AREA_WEB_PL.dbf","MP14_PLNG_AREA_WEB_PL.prj","MP14_PLNG_AREA_WEB_PL.sbn","MP14_PLNG_AREA_WEB_PL.sbx","MP14_PLNG_AREA_WEB_PL.shp","MP14_PLNG_AREA_WEB_PL.shp.xml","MP14_PLNG_AREA_WEB_PL.shx","popperarea.xlsx"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1473,6 +1473,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_distill-->
   <script src="index_files/header-attrs-2.16/header-attrs.js"></script>
+  <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+  <link href="index_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="index_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <script src="index_files/popper-2.6.0/popper.min.js"></script>
   <link href="index_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
@@ -1517,27 +1519,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h2 id="project-thoughts">Project thoughts</h2>
-<p>I am interested in exploring data about Singapore’s socioeconomic classes and how it relates to willingness to vote for the opposition.</p>
-<p>Classified within political theory, Singapore can be identified as benevolent totalitarian, competitive authoritarian, or a de-facto one party state. Though the Singaporean government recognizing itself as a democratic country, reality of the political landscape argues differently. Election frameworks are skewed towards the ruling party’s (PAP) victory, rampant censorship stymies civic education, restrictions and legislatures against public assembly erode collective action efforts, and government schemes entrench citizens in voting for the PAP. Moreover, measures such as v-dem and freedom house identify Singapore as undemocratic (0.4 on v-dem electoral democracy index and 47/100 on global freedom score).</p>
-<p>Much of Singapore’s geographic and spatial distribution relies on socioeconomic class, primarily income from work. The country is divided into 5 different income classes: Upper class, Upper middle class, Intermediate middle class, Lower middle class, and Working class.</p>
-<p>I suspect that lower-class individuals are more willing to vote for the opposition for reasons twofold (demographic and psychographic). Firstly, lower-class voters have already experienced the short-end of the electoral stick in the form of institutional barriers: indebtedness from government housing schemes, a widening skills gap, and elitist career recruitment programs - all culminating towards low social mobility. Thus, animosity towards the ruling party may be a natural voting attitude. Secondly, lower-class voters tend to settle within constituencies where the opposition’s victory has been long-standing. Residing in these constituencies are accompanied with the expectation that the opposition party will control quality of life within the area - a psychographic decision in value and political judgements.</p>
-<p>I believe that data analysis should exist in order to evaluate how much of Singapore’s geographical distribution correlates to (and perhaps affects) an individual’s political alignment. This can help us understand how landscape can be manipulated to tighten political reigns (i.e. ostracize political threats) and predict future voting outcomes in the next elections (2025).</p>
-<h2 id="milestone-2">Milestone 2</h2>
-<p>Does social class and area of residence influence voting patterns in Singapore’s general elections? For my final project, I intend to study whether social classes and constituencies share any trends with the results of the 2020 General Elections in Singapore. I hypothesize that in constituencies with lower-class residents, votes for the opposition will be greater.</p>
-<p>In constituencies with a greater proportion of lower-income individuals, fewer will be obliged to vote for the ruling party because they have experienced discriminatory policies such as in education and housing.</p>
-<p>In constituencies with a greater proportion of higher-income individuals, more will be obliged to vote for the ruling party because they house a greater percentage of elites who have a stake in the election results through private benefits such as institutionalized ties, tax refunds, policy decision making power, and more.</p>
-<p>My sample includes all electoral constituencies (31 in total) in the 2020 General Elections.</p>
-<p>My unit of analysis is Singapore’s General Election in 2020.</p>
-<p>The explanatory variable of interest is whether the ruling party or the opposition won in the constituency. This variable is coded =1 for the opposition’s victory and coded =0 for the ruling party’s victory.</p>
-<p>My outcome variable is the number of votes for the opposition. For instance, if the variable were coded =100, there were 100 votes for the opposition.</p>
-<p>If I observe a greater number of opposition votes in “lower-class” constituencies, then this would support my hypothesis. However, if I observe a greater number of ruling party votes in “lower-class” constituencies, then this would provide evidence to reject my hypothesis.</p>
-<p>When I run my regression of the count of opposition party votes on the lower-class constituency variable, a positive, significant coefficient would support my hypothesis.</p>
-<p>The databases that will be used for this project include:
-- <a href="https://tablebuilder.singstat.gov.sg/table/CT/17571" class="uri">https://tablebuilder.singstat.gov.sg/table/CT/17571</a> (Gross Monthly Income from Work per PAR in 2020)
-- <a href="https://data.gov.sg/dataset/parliamentary-general-election-results" class="uri">https://data.gov.sg/dataset/parliamentary-general-election-results</a> (2020 General Election Results)</p>
-<h2 id="milestone-3-data-visualization">Milestone 3: Data visualization</h2>
-<h2 id="loading-the-general-elections-results-dataset">Loading the general elections results dataset</h2>
+<h2 id="introduction">INTRODUCTION</h2>
+<p>Though the Singaporean government recognizes itself as a democratic country, reality of the political landscape argues differently. Election frameworks are designed towards the People’s Action Party’s (PAP) victory, rampant censorship stymies civic education, restrictions and legislatures against public assembly erode collective action efforts, and government schemes entrench citizens in voting for the PAP. Moreover, organizations like Freedom House identify Singapore as undemocratic (47/100 on the Global Freedom Score). Classified within comparative political theory, Singapore can be identified as benevolent totalitarian or a de-facto one party state. However, Singapore’s general elections in 2020 marked its most competitive election yet. While the PAP won by a 61.2% margin of the vote, it was an 8.7% decrease from the previous election in 2015 – the greatest percentage decrease in party history. History was made with the leading opposition party, the Worker’s Party (WP), securing 10 parliamentary seats (out of 93 available). Furthermore, popular vote share for the WP increased to 50.5% in constituencies where it ran, which was an increase by 10.7% from the 2015 elections. While this may seem like a marginally insignificant difference at surface value, these results have the potential to be repeated or strengthened in the long-term trajectory of Singaporean electoral politics.</p>
+<p>When investigating electoral politics, one voter social category that should be considered is socioeconomic class. In the context of Singapore, much of the country’s spatial distribution relies on socioeconomic class, primarily income from work. The affluent tend to reside in Central Singapore, whereas lower-income and middle-class individuals and households are scattered around the country. Is there an observable trend with this (such as lower-income concentration on the borders)? Considering these factors, this report aims to answer the question of: Is voter preference for the ruling party, geographic distribution, and socioeconomic status related in Singapore?</p>
+<p>This report investigates two hypotheses:
+I. Null hypothesis: voter preference for the PAP, geographic distribution, and socioeconomic status is unrelated (there is no relationship)
+II. Alternative hypothesis: voter preference for the PAP, geographic distribution, and socioeconomic status is related (a relationship exists)</p>
+<p>This is interesting because data analysis can be used to evaluate how much of Singapore’s income and geographical distribution correlates to - and perhaps affects - an individual’s political alignment. This can help us uncover trends in how landscape is manipulated for gerrymandering and predict future voting outcomes in the next elections in 2025.</p>
+<h2 id="data">DATA</h2>
+<p>This study follows a cross-sectional research design as it compares the geographical and income outcomes of two groups: constituencies that had a ruling-party victory and constituencies where the ruling party lost. The fixed point in time for this project is 2020.</p>
+<p>The sample for this study includes all electoral constituencies (31 in total) and the unit of analysis is Singapore’s General Election in 2020. The explanatory variable of interest is whether the ruling party won in the constituency, named by the variable “Win”. This variable is coded = “Yes” if the vote percentage is greater or equal to 0.5, and coded = “No” if the vote percentage is less than 0.5 (indicating the opposition’s victory). The outcome variable is the income bracket of the constituency, which I coded by categorizing all constituencies into 6 different brackets. This was calculated by taking the median value of the income ranges for each constituency and grouping them in $1,000 SGD intervals – lowest of which is $3000 SGD and highest of which is $14,999 SGD. Running a regression on the voting percentage for the PAP on the lower income brackets variable should indicate whether to reject the null hypothesis if a positive, significant coefficient is produced.</p>
+<p>The databases used for this project include the Gross Monthly Income from Work per PAR in 2020 database (<a href="https://tablebuilder.singstat.gov.sg/table/CT/17571" class="uri">https://tablebuilder.singstat.gov.sg/table/CT/17571</a>) and the 2020 General Election Results Parliamentary database (<a href="https://data.gov.sg/dataset/parliamentary-general-election-results" class="uri">https://data.gov.sg/dataset/parliamentary-general-election-results</a>). All the income and geographical data used in this project was collected from a census run by the Singapore Department of Statistics (DOS), a government ministry. Election results data was collected by the Elections Department of Singapore under the Prime Minister’s Office.</p>
+<p>In the first dataset, Singapore’s geographical regions are categorized by “Planning Area of Residence” (PAR). There are 55 PARs in Singapore. Each PAR is assigned to a constituency during the general elections. However, these electoral boundaries have been gerrymandered over Singapore’s history by redrawing and dissolving. This is worth noting as this project investigates the 2020 elections which had a redrawing between Ang Mo Kio and Sengkang constituencies, where residents in two PARs (Fernvale and Jalan Kayu) were moved from Sengkang to Ang Mo Kio. Therefore, the electoral boundaries may shift in the next General Election in 2025. Analyzing the socioeconomic groups that make up each constituency may also give insight into how the Singaporean government chooses to dissolve or redraw certain electoral boundaries due to changing value judgments or living standards in various socioeconomic groups.</p>
+<p>There are two types of constituencies: Group Representation Constituencies (GRCs) and Single-Member Constituencies (SMCs). An SMC is an electoral division with a single Member of Parliament (MP) running for office and representing residents of the entire constituency. A GRC is an electoral division of larger geographical size and housing population. Multiple MPs represent residents in the constituency, and they must be of the same party. There are 31 constituencies in Singapore: 14 Single-Member Constituencies and 17 group representation constituencies. For instance, the voting constituency named “Aljunied” comprises of 5 PARS: Bedok Reservoir–Punggol, Eunos, Kaki Bukit, Paya Lebar, Serangoon.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
@@ -1546,18 +1540,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span><span class='va'>genel</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"~/Desktop/general elections dataset all years.xls"</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<h2 id="loading-the-socioeconomic-class-dataset">Loading the socioeconomic class dataset</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readxl.tidyverse.org'>readxl</a></span><span class='op'>)</span></span>
 <span><span class='va'>socioec</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"~/Downloads/17571.xlsx"</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<p>In this dataset,Singapore’s geographical regions are categorized by “Planning Area of Residence” (PAR). There are 55 PARs in Singapore. Each PAR is assigned to a constituency during the general elections.</p>
-<p>However, these electoral boundaries have been gerrymandered over Singapore’s history by redrawing and dissolving. An example is the 1997 General Election where the PAP won by a close margin of 53,553 votes (54.8%) to the opposition with 44,132 votes (45.2%). After the elections, Cheng San GRC was dissolved in time for the next General Election in 2001. This is worth noting as this project investigates the 2020 elections which had a redrawing between Ang Mo Kio and Sengkang constituencies, where residents in two PARs (Fernvale and Jalan Kayu) were moved from Ang Mo Kio to Sengkang in 2010 and then back to Ang Mo Kio from the previous election in 2020.</p>
-<p>Therefore, the electoral boundaries may shift in the next General Election in 2025. Analyzing the socioeconomic groups that make up each constituency may also give insight into how the Singaporean government chooses to dissolve or redraw certain electoral boundaries due to changing value judgments or living standards in various socioeconomic groups.</p>
-<p>There are two types of constituencies: Group Representation Constituencies (GRCs) and Single-Member Constituencies (SMCs). An SMC is an electoral division with a single Member of Parliament (MP) running for office and representing residents of the entire constituency. Ergo, voters living in an SMC will vote for a single individual on the ballot. A GRC is an electoral division of larger geographical size and housing population. Multiple MPs represent residents in the constituency, and they must be of the same party. Voters residing in a GRC will vote for a group of individuals to be their MPs.</p>
-<p>There are 31 constituencies in Singapore: 14 Single-Member Constituencies and 17 group representation constituencies.For instance, the voting constituency named “Aljunied” comprises of 5 PARS: Bedok Reservoir–Punggol, Eunos, Kaki Bukit, Paya Lebar, Serangoon.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>genel2020</span> <span class='op'>&lt;-</span> <span class='va'>genel</span> <span class='op'>|&gt;</span> </span>
@@ -1600,7 +1588,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span><span class='va'>bracket5</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Holland-Bukit Timah"</span><span class='op'>)</span></span>
 <span></span>
 <span><span class='va'>bracket6</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Tanjong Pagar"</span><span class='op'>)</span></span>
-<span>  </span>
 <span></span>
 <span><span class='va'>papwin</span> <span class='op'>&lt;-</span> <span class='va'>ge2020win</span> <span class='op'>|&gt;</span> </span>
 <span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>party</span> <span class='op'>==</span> <span class='st'>"PAP"</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
@@ -1816,7 +1803,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tbody>
 </table>
 </div>
-<h2 id="visualization-1">Visualization 1</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>papwin</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>constituency</span>, y <span class='op'>=</span> <span class='va'>vote_percentage</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
@@ -1827,23 +1813,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
-<h2 id="visualization-2">Visualization 2</h2>
+<p>The following plot visualizes the constituency variable against the vote percentage variable. From this figure, we can observe that there were 3 constituencies where the PAP lost (as indicated by the bar height under the 0.5 line): Aljunied, Hougang, and Sengkang. The 0.5 marker line also shows the constituencies where the PAP had a comparatively small margin of victory such as Tanjong Pagar, Bukit Panjang, and East Coast. This visualization is useful in summarizing the electoral margins of victory at a glance for all constituencies.</p>
+<h2 id="results">RESULTS</h2>
+<p>Since there are two relationships of interests (one for income bracket and one for geographic region), two visualizations were created to study the regression and voting patterns.</p>
+<h2 id="visualization-1">Visualization 1</h2>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>papwin</span><span class='op'>$</span><span class='va'>income_bracket</span>, <span class='va'>papwin</span><span class='op'>$</span><span class='va'>vote_percentage</span><span class='op'>)</span></span></code></pre>
-</div>
-<img src="index_files/figure-html5/unnamed-chunk-6-1.png" width="624" />
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>papwin</span>,<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>income_bracket</span>, y <span class='op'>=</span> <span class='va'>vote_percentage</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
 </div>
-<p><img src="index_files/figure-html5/unnamed-chunk-6-2.png" width="624" /></p>
+<p><img src="index_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
-<h2 id="analysis-of-visualizations">Analysis of visualizations</h2>
-<p>Based on figure 1, there are 3 constituencies that fall under the 0.5 vote percentage cutoff, indicating that the PAP lost in 3 out of 31 constituencies.</p>
-<p>Looking to figure 2, we can observe that there is an inverted bell curve relationship between income bracket and vote percentage. The upper interval of the second income bracket is below the lower interval of the first income bracket, thus proving that the difference is statistically significant because it is outside of the interval. However, the confidence intervals of brackets 3, 4, 5, and 6 are overlapping, indicating that this difference is not statistically significant.</p>
-<h2 id="analysis-of-income-bracket-and-vote-percentage">Analysis of income bracket and vote percentage</h2>
+<p>The first visualization is a scatterplot that graphs the relationship between vote percentage and income bracket. Observably, there is an inverted bell curve relationship between income bracket and vote percentage. The upper interval of the second income bracket is below the lower interval of the first income bracket, thus proving that the difference is statistically significant because it is outside of the interval. However, the confidence intervals of brackets 3, 4, 5, and 6 are overlapping, indicating that this difference is not statistically significant. Out of the 6 income brackets, the income bracket with the greatest number of constituencies was $3,000 - $3,999 and $4,000 - $4,999 with 9 constituencies each. The income bracket with the least number of constituencies was &gt; $12,000 (which extended to $14,999), where there was only one constituency, Tanglin. Based on the trend line, it can be observed the lowest income bracket (income bracket 1) has the highest average vote percentage for the PAP and income bracket 2 has the lowest average vote percentage for the PAP. The general trend seems to follow an inverted normal distribution, where the middle-income brackets have a lower average vote percentage for the PAP, but the lowest and highest income brackets have a higher average vote percentage for the PAP. Furthermore, since there is only 1 consituency per each of the higher-income brackets (such as income brackets 4,5, and 6), this may have affected the trendline; perhaps studying the trend over an extended period of time woud show a stronger inverted trend or otherwise.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>l.lm</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>vote_percentage</span> <span class='op'>~</span> <span class='va'>income_bracket</span>, data <span class='op'>=</span> <span class='va'>papwin</span><span class='op'>)</span> </span>
@@ -1946,7 +1928,7 @@ First 10 features:
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>papwin</span><span class='op'>$</span><span class='va'>cwin</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/chartr.html'>tolower</a></span><span class='op'>(</span><span class='va'>papwin</span><span class='op'>$</span><span class='va'>constituency</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<h2 id="mapping-visualization">Mapping Visualization</h2>
+<h2 id="visualization-2">Visualization 2</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>newnewdata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/merge.html'>merge</a></span><span class='op'>(</span><span class='va'>sgnew</span>, <span class='va'>papwin</span>, by.x <span class='op'>=</span> <span class='st'>"cwin"</span>, by.y <span class='op'>=</span> <span class='st'>"cwin"</span><span class='op'>)</span></span>
@@ -1957,16 +1939,330 @@ First 10 features:
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-9-1.png" width="624" /></p>
 </div>
-<h2 id="analyzing-the-map">Analyzing the map</h2>
 <p>Overall, Central Singapore has a strong vote percentage as seen with its warmer tones. Holland-Bukit Timah, Bishan-Toa Payoh, and Tanjong Pagar constituencies.
 The North-East and Eastern regions have the lowest vote percentage. This region consists of Hougang and Serangoon constituencies. The Eastern most region is represented by the East Coast constituency.
 Western Singapore also has a relatively low vote percentage concentration for the ruling party. This region consists of the West Coast constituency entirely.</p>
 <p>In general, the East and West Coast of Singapore has a lower vote percentage for the ruling party, whereas the central regions of Singapore have higher vote percentages. There are a few outliers such as the purple region (Aljunied).</p>
-<h2 id="observing-the-warmest-and-coldest-regions-in-relation-to-income-bracket">Observing the warmest and coldest regions in relation to income bracket</h2>
 <p>The warmest regions on the map are Jurong and Ang Mo Kio (the two red regions). This matches the data as Jurong and Ang Mo Kio have significantly high vote percentages of 0.7461 and 0.7191 respectively. In relation to income bracket, Jurong is in income bracket 1 and Ang Mo Kio is in income bracket 1 as well.</p>
 <p>The coldest regions on the map are Hougang, Aljunied, the East Coast and West Coast. East Coast falls under income bracket 2 and West Coast falls under income bracket 3. Hougang and Aljunied are both in income bracket 2. We can infer that these regions are inhabited by middle-income voters.</p>
 <p>On the other hand, turning to high-income voters, they reside in regions falling under income brackets 4, 5, and 6. These constituencies are Holland-Bukit Timah, Bishan-Toa Payoh, and Tanjong Pagar. Unsurprisingly, these regions are situated in Central Singapore - the most concentrated warm area on the map.</p>
 <p>Here, we observe an inverse relationship with income bracket and vote percentage. Both low income households and high income households will vote for the ruling party. However, middle income households will either vote against (in the case of Hougang, Aljunied, and Sengkang) or vote less strongly for (in the case of East and West Coast) the PAP.</p>
+<h2 id="multiple-regression-test">Multiple regression test</h2>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readxl.tidyverse.org'>readxl</a></span><span class='op'>)</span></span>
+<span><span class='va'>poparea</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"popperarea.xlsx"</span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://r-spatial.github.io/sf/'>sf</a></span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>poparea</span> <span class='op'>&lt;-</span> <span class='va'>poparea</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>cwin <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/chartr.html'>tolower</a></span><span class='op'>(</span><span class='va'>`Planning Area of Residence`</span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>popdata</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/merge.html'>merge</a></span><span class='op'>(</span><span class='va'>poparea</span>, <span class='va'>papwin</span>, by.x <span class='op'>=</span> <span class='st'>"cwin"</span>, by.y <span class='op'>=</span> <span class='st'>"cwin"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>multreg</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>vote_percentage</span> <span class='op'>~</span> <span class='va'>income_bracket</span> <span class='op'>+</span><span class='va'>Total</span>, data <span class='op'>=</span> <span class='va'>popdata</span><span class='op'>)</span> </span></code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://vincentarelbundock.github.io/modelsummary/'>modelsummary</a></span><span class='op'>)</span></span>
+<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>l.lm</span>, <span class='va'>multreg</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Model 1
+</th>
+<th style="text-align:center;">
+Model 2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+0.641
+</td>
+<td style="text-align:center;">
+0.625
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.034)
+</td>
+<td style="text-align:center;">
+(0.096)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+income_bracket
+</td>
+<td style="text-align:center;">
+−0.013
+</td>
+<td style="text-align:center;">
+−0.021
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.014)
+</td>
+<td style="text-align:center;">
+(0.044)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Total
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+−9e−08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+(5e−08)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+29
+</td>
+<td style="text-align:center;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.034
+</td>
+<td style="text-align:center;">
+0.280
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+−0.002
+</td>
+<td style="text-align:center;">
+0.075
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AIC
+</td>
+<td style="text-align:center;">
+−51.6
+</td>
+<td style="text-align:center;">
+−11.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BIC
+</td>
+<td style="text-align:center;">
+−47.5
+</td>
+<td style="text-align:center;">
+−10.6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Log.Lik.
+</td>
+<td style="text-align:center;">
+28.818
+</td>
+<td style="text-align:center;">
+9.908
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RMSE
+</td>
+<td style="text-align:center;">
+0.09
+</td>
+<td style="text-align:center;">
+0.09
+</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>var_labels</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span></span>
+<span>  <span class='st'>"(Intercept)"</span> <span class='op'>=</span> <span class='st'>"Intercept"</span>, </span>
+<span>  <span class='st'>"income_bracket"</span> <span class='op'>=</span> <span class='st'>"Income Bracket"</span>, </span>
+<span>  <span class='st'>"Total"</span> <span class='op'>=</span> <span class='st'>"Population per Constituency"</span></span>
+<span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'>modelsummary</span><span class='fu'>::</span><span class='fu'><a href='https://vincentarelbundock.github.io/modelsummary/reference/modelsummary.html'>modelsummary</a></span><span class='op'>(</span></span>
+<span>  <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='va'>l.lm</span>, <span class='va'>multreg</span><span class='op'>)</span>, </span>
+<span>  coef_map <span class='op'>=</span> <span class='va'>var_labels</span>, </span>
+<span>  gof_map <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"nobs"</span>, <span class='st'>"r.squared"</span>, <span class='st'>"adj.r.squared"</span><span class='op'>)</span>, </span>
+<span>  stars <span class='op'>=</span> <span class='cn'>TRUE</span></span>
+<span><span class='op'>)</span></span></code></pre>
+</div>
+<table style="NAborder-bottom: 0; width: auto !important; margin-left: auto; margin-right: auto;" class="table">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Model 1
+</th>
+<th style="text-align:center;">
+Model 2
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Intercept
+</td>
+<td style="text-align:center;">
+0.641***
+</td>
+<td style="text-align:center;">
+0.625***
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.034)
+</td>
+<td style="text-align:center;">
+(0.096)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Income Bracket
+</td>
+<td style="text-align:center;">
+−0.013
+</td>
+<td style="text-align:center;">
+−0.021
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.014)
+</td>
+<td style="text-align:center;">
+(0.044)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Population per Constituency
+</td>
+<td style="text-align:center;">
+</td>
+<td style="text-align:center;">
+−9e−08
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1px">
+(5e−08)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+29
+</td>
+<td style="text-align:center;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2
+</td>
+<td style="text-align:center;">
+0.034
+</td>
+<td style="text-align:center;">
+0.280
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R2 Adj.
+</td>
+<td style="text-align:center;">
+−0.002
+</td>
+<td style="text-align:center;">
+0.075
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001
+</td>
+</tr>
+</tfoot>
+</table>
+</div>
+<p>To determine whether income bracket is statistically significant, I controlled for confounding variables using a multiple regression test and visualizing it using the modelsummary function. The second x variable in this test is population per constituency.</p>
+<p>As seen in the table generated, the coefficient for income bracket is -0.021 and the coefficient for population per constituency is -9 x 10-8. Thus, when all other factors are held constant, there is a 2.1% decrease in vote percentage for the PAP when income bracket increases by one unit and there is a close to zero effect (but still decrease) in vote percentage for the PAP when population per constituency increases.</p>
+<p>Based on these values, it can be inferred that the relationship between income bracket and vote percentage for the PAP is relatively negative (but from our visualizations we understand that it is a non-linear trend, where the relationship is positive for low income and high-income brackets, but a negative relationship exists for middle-income brackets). Additionally, there is close to no relationship between population per constituency and vote percentage for the PAP, though the value is negative. However, these values are not statistically significant when run through the stars argument.</p>
+<p>Based on the stars argument, there is a true statistical significance for the intercept where p is less than 0.001. Thus, when all the explanatory variables (income bracket and population per constituency) is zero, the mean vote percentage is 0.625. This suggests that there is a 62.5% vote percentage for the PAP regardless of a voter’s income bracket and population per constituency where they reside in. This suggests that there may be other factors affecting an individual’s decision to vote for the PAP – perhaps factors such as ethnic background, religion, or family.</p>
+<h2 id="conclusion">CONCLUSION</h2>
+<p>Because this test is not a randomized test, the relationship identified between income bracket, geographical distribution, and population per constituency is not causal. Furthermore, the stars test under the multiple regression calculation shows that there is no statistical significance between income bracket and population per constituency of an individual, thus accepting the null hypothesis that no relationship exists. Despite this, there seems to be a non-linear relationship between income bracket and vote percentage for the PAP. The inverted U-shaped visualization helps us understand that middle-income individuals are the least likely to vote for the PAP, whereas the lowest and highest income groups are more, and equally, likely to vote for the PAP. The map also indicates that the borders of Singapore have a lower vote percentage for the PAP and Central Singapore remains where most of the PAP vote is concentrated. This can be linked to the income groups residing in those areas (since Central Singapore has the highest income brackets and East Coast and West Coast have middle income bracket groups). This indicates potential for the alternative hypothesis to be accepted if the study is improved. Identifying a causal relationship through this test is also difficult to ascertain since there are only 10 observations. Ultimately, this project is limited by the non-randomized factors such as gross monthly income from work. Ideally, this project would be run in a setting where income and geographic distribution is randomized, perhaps through randomly distributing income or through distributing individuals to random constituencies across Singapore. More realistically, a stratified or permutation randomization test may be conducted where individuals are randomly assigned to different groups and an observational study is conducted. This study could also increase the time period observed to all the years of the general elections, perhaps strengthening the negative relationship trend observed between middle-income groups and vote percentage for the PAP. However, gerrymandering and the redrawing of constituency boundaries poses further difficulties to this method. Therefore, another improvement could be including more variables in the multiple regression test such as ethnic background, literacy rates, or hours in community service involvement.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
