@@ -90,7 +90,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Gov 50 Final Project</title>
 
-  <meta property="description" itemprop="description" content="My final project"/>
+  <meta property="description" itemprop="description" content="Investigating voting patterns in Singapore&#39;s 2020 General Election"/>
 
 
   <meta name="article:author" content="Althea Lee"/>
@@ -98,19 +98,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Gov 50 Final Project"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="My final project"/>
+  <meta property="og:description" content="Investigating voting patterns in Singapore&#39;s 2020 General Election"/>
   <meta property="og:locale" content="en_US"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Gov 50 Final Project"/>
-  <meta property="twitter:description" content="My final project"/>
+  <meta property="twitter:description" content="Investigating voting patterns in Singapore&#39;s 2020 General Election"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Gov 50 Final Project"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Althea Lee"]}]}]},{"type":"character","attributes":{},"value":["My final project"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Gov 50 Final Project"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Althea Lee"]}]}]},{"type":"character","attributes":{},"value":["Investigating voting patterns in Singapore's 2020 General Election "]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1495,7 +1495,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Gov 50 Final Project","description":"My final project","authors":[{"author":"Althea Lee","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}]}
+{"title":"Gov 50 Final Project","description":"Investigating voting patterns in Singapore's 2020 General Election","authors":[{"author":"Althea Lee","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1508,7 +1508,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>Gov 50 Final Project</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p>My final project</p>
+<p>Investigating voting patterns in Singapore’s 2020 General Election</p>
 </div>
 
 <div class="d-byline">
@@ -1821,7 +1821,9 @@ II. Alternative hypothesis: voter preference for the PAP, geographic distributio
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>papwin</span>,<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>income_bracket</span>, y <span class='op'>=</span> <span class='va'>vote_percentage</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> </span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> </span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Income Bracket"</span>, </span>
+<span>       y <span class='op'>=</span> <span class='st'>"Vote Percentage for the PAP"</span><span class='op'>)</span></span></code></pre>
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
@@ -2258,11 +2260,22 @@ R2 Adj.
 </table>
 </div>
 <p>To determine whether income bracket is statistically significant, I controlled for confounding variables using a multiple regression test and visualizing it using the modelsummary function. The second x variable in this test is population per constituency.</p>
-<p>As seen in the table generated, the coefficient for income bracket is -0.021 and the coefficient for population per constituency is -9 x 10-8. Thus, when all other factors are held constant, there is a 2.1% decrease in vote percentage for the PAP when income bracket increases by one unit and there is a close to zero effect (but still decrease) in vote percentage for the PAP when population per constituency increases.</p>
+<p>As seen in the table generated, the coefficient for income bracket is -0.021 and the coefficient for population per constituency is -9 x 10-8. Thus, when all other factors are held constant, there is a 2.1% decrease in vote percentage for the PAP when income bracket increases by one unit and there is a close to zero effect (but still decrease) in vote percentage for the PAP when population per constituency increases by 1 individual.</p>
 <p>Based on these values, it can be inferred that the relationship between income bracket and vote percentage for the PAP is relatively negative (but from our visualizations we understand that it is a non-linear trend, where the relationship is positive for low income and high-income brackets, but a negative relationship exists for middle-income brackets). Additionally, there is close to no relationship between population per constituency and vote percentage for the PAP, though the value is negative. However, these values are not statistically significant when run through the stars argument.</p>
-<p>Based on the stars argument, there is a true statistical significance for the intercept where p is less than 0.001. Thus, when all the explanatory variables (income bracket and population per constituency) is zero, the mean vote percentage is 0.625. This suggests that there is a 62.5% vote percentage for the PAP regardless of a voter’s income bracket and population per constituency where they reside in. This suggests that there may be other factors affecting an individual’s decision to vote for the PAP – perhaps factors such as ethnic background, religion, or family.</p>
+<p>Further, statistical significance exists for the intercept where p is less than 0.001. Thus, when all the explanatory variables (income bracket and population per constituency) is zero, the mean vote percentage is 0.625. This suggests that there is a 62.5% vote percentage for the PAP regardless of a voter’s income bracket and population per constituency where they reside in. This suggests that there may be other factors affecting an individual’s decision to vote for the PAP – perhaps factors such as ethnic background, religion, or family.</p>
 <h2 id="conclusion">CONCLUSION</h2>
 <p>Because this test is not a randomized test, the relationship identified between income bracket, geographical distribution, and population per constituency is not causal. Furthermore, the stars test under the multiple regression calculation shows that there is no statistical significance between income bracket and population per constituency of an individual, thus accepting the null hypothesis that no relationship exists. Despite this, there seems to be a non-linear relationship between income bracket and vote percentage for the PAP. The inverted U-shaped visualization helps us understand that middle-income individuals are the least likely to vote for the PAP, whereas the lowest and highest income groups are more, and equally, likely to vote for the PAP. The map also indicates that the borders of Singapore have a lower vote percentage for the PAP and Central Singapore remains where most of the PAP vote is concentrated. This can be linked to the income groups residing in those areas (since Central Singapore has the highest income brackets and East Coast and West Coast have middle income bracket groups). This indicates potential for the alternative hypothesis to be accepted if the study is improved. Identifying a causal relationship through this test is also difficult to ascertain since there are only 10 observations. Ultimately, this project is limited by the non-randomized factors such as gross monthly income from work. Ideally, this project would be run in a setting where income and geographic distribution is randomized, perhaps through randomly distributing income or through distributing individuals to random constituencies across Singapore. More realistically, a stratified or permutation randomization test may be conducted where individuals are randomly assigned to different groups and an observational study is conducted. This study could also increase the time period observed to all the years of the general elections, perhaps strengthening the negative relationship trend observed between middle-income groups and vote percentage for the PAP. However, gerrymandering and the redrawing of constituency boundaries poses further difficulties to this method. Therefore, another improvement could be including more variables in the multiple regression test such as ethnic background, literacy rates, or hours in community service involvement.</p>
+<h2 id="data-sources">DATA SOURCES</h2>
+<p>[a] <a href="https://tablebuilder.singstat.gov.sg/table/CT/17571" class="uri">https://tablebuilder.singstat.gov.sg/table/CT/17571</a></p>
+<p>[b] <a href="https://data.gov.sg/dataset/parliamentary-general-election-results" class="uri">https://data.gov.sg/dataset/parliamentary-general-election-results</a></p>
+<p>[c] <a href="https://earthworks.stanford.edu/catalog/stanford-pg798kr1205" class="uri">https://earthworks.stanford.edu/catalog/stanford-pg798kr1205</a></p>
+<p>[d] <a href="https://www.citypopulation.de/en/singapore/cities/" class="uri">https://www.citypopulation.de/en/singapore/cities/</a></p>
+<h2 id="sources">SOURCES</h2>
+<p>[1] Beech, Hannah. “In Singapore, an Orderly Election and a (Somewhat) Surprising Result.” The New York Times, 10 July 2020, <a href="https://www.nytimes.com/2020/07/10/world/asia/singapore-election-results.html" class="uri">https://www.nytimes.com/2020/07/10/world/asia/singapore-election-results.html</a>.</p>
+<p>[2] Mohan, Matthew, and Rachel Phua. “Ge2020: PAP Wins with 61.24% of Vote; WP Claims Two Grcs Including New Sengkang GRC.” Channel News Asia, 11 July 2020, <a href="https://www.channelnewsasia.com/singapore/ge2020-general-election-final-result-pap-wp-952471" class="uri">https://www.channelnewsasia.com/singapore/ge2020-general-election-final-result-pap-wp-952471</a>.</p>
+<p>[3] “Singapore: Freedom in the World 2022 Country Report.” Freedom House, 2022, <a href="https://freedomhouse.org/country/singapore/freedom-world/2022" class="uri">https://freedomhouse.org/country/singapore/freedom-world/2022</a>.</p>
+<p>[4] “Singapore’s Ruling Party Wins Easily-but Its Vote Falls Sharply.” The Economist, The Economist Newspaper, 10 July 2020, <a href="https://www.economist.com/asia/2020/07/10/singapores-ruling-party-wins-easily-but-its-vote-falls-sharply" class="uri">https://www.economist.com/asia/2020/07/10/singapores-ruling-party-wins-easily-but-its-vote-falls-sharply</a>.</p>
+<p>[5] Tung, Ngiam Shih. “How Gerrymandering Creates Unfair Elections in Singapore.” New Naratif, 1 Mar. 2022, <a href="https://newnaratif.com/how-gerrymandering-creates-unfair-elections-in-singapore/" class="uri">https://newnaratif.com/how-gerrymandering-creates-unfair-elections-in-singapore/</a>.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

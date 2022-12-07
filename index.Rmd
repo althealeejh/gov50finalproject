@@ -1,7 +1,7 @@
 ---
 title: "Gov 50 Final Project"
 author: Althea Lee
-description: "My final project"
+description: "Investigating voting patterns in Singapore's 2020 General Election "
 output:
   distill::distill_article:
     self_contained: false
@@ -27,7 +27,7 @@ The sample for this study includes all electoral constituencies (31 in total) an
 
 The databases used for this project include the Gross Monthly Income from Work per PAR in 2020 database (https://tablebuilder.singstat.gov.sg/table/CT/17571) and the 2020 General Election Results Parliamentary database (https://data.gov.sg/dataset/parliamentary-general-election-results). All the income and geographical data used in this project was collected from a census run by the Singapore Department of Statistics (DOS), a government ministry. Election results data was collected by the Elections Department of Singapore under the Prime Minister’s Office. 
 
- In the first dataset, Singapore’s geographical regions are categorized by “Planning Area of Residence” (PAR). There are 55 PARs in Singapore. Each PAR is assigned to a constituency during the general elections. However, these electoral boundaries have been gerrymandered over Singapore’s history by redrawing and dissolving. This is worth noting as this project investigates the 2020 elections which had a redrawing between Ang Mo Kio and Sengkang constituencies, where residents in two PARs (Fernvale and Jalan Kayu) were moved from Sengkang to Ang Mo Kio. Therefore, the electoral boundaries may shift in the next General Election in 2025. Analyzing the socioeconomic groups that make up each constituency may also give insight into how the Singaporean government chooses to dissolve or redraw certain electoral boundaries due to changing value judgments or living standards in various socioeconomic groups.
+In the first dataset, Singapore’s geographical regions are categorized by “Planning Area of Residence” (PAR). There are 55 PARs in Singapore. Each PAR is assigned to a constituency during the general elections. However, these electoral boundaries have been gerrymandered over Singapore’s history by redrawing and dissolving. This is worth noting as this project investigates the 2020 elections which had a redrawing between Ang Mo Kio and Sengkang constituencies, where residents in two PARs (Fernvale and Jalan Kayu) were moved from Sengkang to Ang Mo Kio. Therefore, the electoral boundaries may shift in the next General Election in 2025. Analyzing the socioeconomic groups that make up each constituency may also give insight into how the Singaporean government chooses to dissolve or redraw certain electoral boundaries due to changing value judgments or living standards in various socioeconomic groups.
 
 There are two types of constituencies: Group Representation Constituencies (GRCs) and Single-Member Constituencies (SMCs). An SMC is an electoral division with a single Member of Parliament (MP) running for office and representing residents of the entire constituency. A GRC is an electoral division of larger geographical size and housing population. Multiple MPs represent residents in the constituency, and they must be of the same party. There are 31 constituencies in Singapore: 14 Single-Member Constituencies and 17 group representation constituencies. For instance, the voting constituency named “Aljunied” comprises of 5 PARS: Bedok Reservoir–Punggol, Eunos, Kaki Bukit, Paya Lebar, Serangoon.
 
@@ -108,7 +108,9 @@ Since there are two relationships of interests (one for income bracket and one f
 ```{r}
 ggplot(papwin,aes(x = income_bracket, y = vote_percentage)) + 
   geom_point() + 
-  geom_smooth()
+  geom_smooth() + 
+    labs(x = "Income Bracket", 
+       y = "Vote Percentage for the PAP")
 ```
 
 The first visualization is a scatterplot that graphs the relationship between vote percentage and income bracket. Observably, there is an inverted bell curve relationship between income bracket and vote percentage. The upper interval of the second income bracket is below the lower interval of the first income bracket, thus proving that the difference is statistically significant because it is outside of the interval. However, the confidence intervals of brackets 3, 4, 5, and 6 are overlapping, indicating that this difference is not statistically significant. Out of the 6 income brackets, the income bracket with the greatest number of constituencies was $3,000 - $3,999 and $4,000 - $4,999 with 9 constituencies each. The income bracket with the least number of constituencies was > $12,000 (which extended to $14,999), where there was only one constituency, Tanglin. Based on the trend line, it can be observed the lowest income bracket (income bracket 1) has the highest average vote percentage for the PAP and income bracket 2 has the lowest average vote percentage for the PAP. The general trend seems to follow an inverted normal distribution, where the middle-income brackets have a lower average vote percentage for the PAP, but the lowest and highest income brackets have a higher average vote percentage for the PAP. Furthermore, since there is only 1 consituency per each of the higher-income brackets (such as income brackets 4,5, and 6), this may have affected the trendline; perhaps studying the trend over an extended period of time woud show a stronger inverted trend or otherwise. 
@@ -200,12 +202,32 @@ modelsummary::modelsummary(
 
 To determine whether income bracket is statistically significant, I controlled for confounding variables using a multiple regression test and visualizing it using the modelsummary function. The second x variable in this test is population per constituency. 
 
-As seen in the table generated, the coefficient for income bracket is -0.021 and the coefficient for population per constituency is -9 x 10-8. Thus, when all other factors are held constant, there is a 2.1% decrease in vote percentage for the PAP when income bracket increases by one unit and there is a close to zero effect (but still decrease) in vote percentage for the PAP when population per constituency increases. 
+As seen in the table generated, the coefficient for income bracket is -0.021 and the coefficient for population per constituency is -9 x 10-8. Thus, when all other factors are held constant, there is a 2.1% decrease in vote percentage for the PAP when income bracket increases by one unit and there is a close to zero effect (but still decrease) in vote percentage for the PAP when population per constituency increases by 1 individual. 
 
 Based on these values, it can be inferred that the relationship between income bracket and vote percentage for the PAP is relatively negative (but from our visualizations we understand that it is a non-linear trend, where the relationship is positive for low income and high-income brackets, but a negative relationship exists for middle-income brackets). Additionally, there is close to no relationship between population per constituency and vote percentage for the PAP, though the value is negative. However, these values are not statistically significant when run through the stars argument. 
 
-Based on the stars argument, there is a true statistical significance for the intercept where p is less than 0.001. Thus, when all the explanatory variables (income bracket and population per constituency) is zero, the mean vote percentage is 0.625. This suggests that there is a 62.5% vote percentage for the PAP regardless of a voter’s income bracket and population per constituency where they reside in. This suggests that there may be other factors affecting an individual’s decision to vote for the PAP – perhaps factors such as ethnic background, religion, or family. 
+Further, statistical significance exists for the intercept where p is less than 0.001. Thus, when all the explanatory variables (income bracket and population per constituency) is zero, the mean vote percentage is 0.625. This suggests that there is a 62.5% vote percentage for the PAP regardless of a voter’s income bracket and population per constituency where they reside in. This suggests that there may be other factors affecting an individual’s decision to vote for the PAP – perhaps factors such as ethnic background, religion, or family. 
 
 
 ## CONCLUSION 
 Because this test is not a randomized test, the relationship identified between income bracket, geographical distribution, and population per constituency is not causal. Furthermore, the stars test under the multiple regression calculation shows that there is no statistical significance between income bracket and population per constituency of an individual, thus accepting the null hypothesis that no relationship exists. Despite this, there seems to be a non-linear relationship between income bracket and vote percentage for the PAP. The inverted U-shaped visualization helps us understand that middle-income individuals are the least likely to vote for the PAP, whereas the lowest and highest income groups are more, and equally, likely to vote for the PAP. The map also indicates that the borders of Singapore have a lower vote percentage for the PAP and Central Singapore remains where most of the PAP vote is concentrated. This can be linked to the income groups residing in those areas (since Central Singapore has the highest income brackets and East Coast and West Coast have middle income bracket groups). This indicates potential for the alternative hypothesis to be accepted if the study is improved. Identifying a causal relationship through this test is also difficult to ascertain since there are only 10 observations.  Ultimately, this project is limited by the non-randomized factors such as gross monthly income from work. Ideally, this project would be run in a setting where income and geographic distribution is randomized, perhaps through randomly distributing income or through distributing individuals to random constituencies across Singapore. More realistically, a stratified or permutation randomization test may be conducted where individuals are randomly assigned to different groups and an observational study is conducted. This study could also increase the time period observed to all the years of the general elections, perhaps strengthening the negative relationship trend observed between middle-income groups and vote percentage for the PAP. However, gerrymandering and the redrawing of constituency boundaries poses further difficulties to this method. Therefore, another improvement could be including more variables in the multiple regression test such as ethnic background, literacy rates, or hours in community service involvement. 
+
+## DATA SOURCES
+[a] https://tablebuilder.singstat.gov.sg/table/CT/17571
+
+[b] https://data.gov.sg/dataset/parliamentary-general-election-results
+
+[c] https://earthworks.stanford.edu/catalog/stanford-pg798kr1205
+
+[d] https://www.citypopulation.de/en/singapore/cities/ 
+
+## SOURCES
+[1] Beech, Hannah. “In Singapore, an Orderly Election and a (Somewhat) Surprising Result.” The New York Times, 10 July 2020, https://www.nytimes.com/2020/07/10/world/asia/singapore-election-results.html. 
+
+[2] Mohan, Matthew, and Rachel Phua. “Ge2020: PAP Wins with 61.24% of Vote; WP Claims Two Grcs Including New Sengkang GRC.” Channel News Asia, 11 July 2020, https://www.channelnewsasia.com/singapore/ge2020-general-election-final-result-pap-wp-952471. 
+
+[3] “Singapore: Freedom in the World 2022 Country Report.” Freedom House, 2022, https://freedomhouse.org/country/singapore/freedom-world/2022. 
+
+[4] “Singapore's Ruling Party Wins Easily-but Its Vote Falls Sharply.” The Economist, The Economist Newspaper, 10 July 2020, https://www.economist.com/asia/2020/07/10/singapores-ruling-party-wins-easily-but-its-vote-falls-sharply. 
+
+[5] Tung, Ngiam Shih. “How Gerrymandering Creates Unfair Elections in Singapore.” New Naratif, 1 Mar. 2022, https://newnaratif.com/how-gerrymandering-creates-unfair-elections-in-singapore/. 
